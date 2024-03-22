@@ -1,11 +1,11 @@
 import { Observable, of } from 'rxjs';
-import { PlanetPort } from '../../ports/planet.port';
+import { PlanetGateway } from '../../ports/planet.gateway';
 import { Planet } from '../../models/planet.model';
 
-export class InMemoryPlanetAdapter extends PlanetPort {
+export class InMemoryPlanetGateway extends PlanetGateway {
   planets: Planet[] = [];
 
-  withPlanets(planets: Planet[]): InMemoryPlanetAdapter {
+  withPlanets(planets: Planet[]): InMemoryPlanetGateway {
     this.planets = planets;
     return this;
   }
